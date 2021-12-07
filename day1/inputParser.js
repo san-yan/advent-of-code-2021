@@ -8,6 +8,13 @@ const input = fs
 	.split('\n')
 	.map((num) => parseInt(num, 10));
 
+const sampleInput = fs
+	.readFileSync(path.join(__dirname, 'sampleInput.txt'), 'utf8')
+	.toString()
+	.trim()
+	.split('\n')
+	.map((num) => parseInt(num, 10));
+
 module.exports = {
-	input,
+	input, sampleInput
 };

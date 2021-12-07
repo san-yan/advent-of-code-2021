@@ -1,4 +1,4 @@
-const { input } = require('./inputParser');
+const { input, sampleInput } = require('./inputParser');
 
 function loopMeasurements() {
   let incrementCount = 0;
@@ -16,8 +16,9 @@ function loopMeasurements() {
 }
 
 function sumOfWindow(index) {
-  if (input[index] && input[index+1] && input[index+2]) {
-    return input[index] + input[index+1] + input[index+2];
+  const arr = input;
+  if (arr[index] && arr[index+1] && arr[index+2]) {
+    return arr[index] + arr[index+1] + arr[index+2];
   }
 
   return null;
