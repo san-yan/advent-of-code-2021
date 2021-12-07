@@ -3,18 +3,20 @@ const { input, sampleInput } = require('./inputParser');
 function calculatePosition() {
   let horizontalPosition = 0;
   let verticalPosition = 0;
+  let aim = 0;
 
   for(command of input) {
-    const [direction, unit] = command.split(' ');
+    let [direction, unit] = command.split(' ');
+    unit = parseInt(unit);
 
     if (direction === 'forward') {
-      horizontalPosition += parseInt(unit);
+      horizontalPosition += unit;
+      verticalPosition += aim*unit;
     } else if (direction === 'up') {
-      verticalPosition -= parseInt(unit);
+      aim -= unit;
     } else {
-      verticalPosition += parseInt(unit);
+      aim += unit;
     }
-
   }
   console.log(horizontalPosition*verticalPosition);
 }
